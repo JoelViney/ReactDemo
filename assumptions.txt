@@ -1,0 +1,3 @@
+
+* Multi-language support is not required.
+* Only interested in searching movies, requirements did say movie titles but more clarity from the user would be a good idea.
