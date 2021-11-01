@@ -1,4 +1,5 @@
-function Movie(props) {
+
+const Movie = (props) => {
     return (
       <div>Movie details</div>
     );

@@ -1,5 +1,4 @@
 
-import PropTypes from 'prop-types'
 
 const Movies = ({ movies }) => {
 
@@ -13,4 +12,4 @@ const Movies = ({ movies }) => {
 	);
 }
 
-export default MovieList;
+export default Movies;

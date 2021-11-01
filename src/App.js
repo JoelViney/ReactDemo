@@ -1,19 +1,19 @@
 import './App.css';
+import { useState } from 'react'
 import Header from './components/Header';
 
 function App() {
-	const criteria = 'test'
-	const loading = false;
+	const [loading, setLoading] = useState(false)
 
 	const handleSearch = (criteria) => {
-		console.log.apply(`search: ${criteria}`);
-		// setCriteria(criteria);
+		console.log(`search: ${criteria}`);
+		setLoading(true);
 	}
 
 	return (
 		<div>
-			<Header criteria={criteria} loading={loading} onSearch={handleSearch}></Header>
-			<h3>criteria: { criteria }</h3>
+			<Header loading={loading} 
+				onSearch={handleSearch}></Header>
 		</div>
 	);
 }

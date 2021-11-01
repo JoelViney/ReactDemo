@@ -6,19 +6,16 @@ import { Button, Container, InputGroup, Nav, Navbar } from 'react-bootstrap';
 import { Form, FormControl } from "react-bootstrap";
 
 const propTypes = {
-	criteria: PropTypes.string.isRequired,
 	loading: PropTypes.bool.isRequired,
 	onSearch: PropTypes.func.isRequired,
 };
 
-const Header = ({ onSearch }) => {
+const Header = ({ loading, onSearch }) => {
 	const [criteria, setCriteria] = useState('')
-	const [loading] = useState(false)
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(`handleSubmit... ${criteria}`);
-		
+		console.log(`handleSubmit: ${criteria}`);
 		onSearch(criteria);
 	}
 
