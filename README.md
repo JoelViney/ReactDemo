@@ -1,19 +1,10 @@
 
 ## MyFlix
 
-Be gentle, I am a Bit rusty as I have been in Angular world for 3 years... I hope it doesn't show.
+Be gentle, I am a Bit rusty as I have been in Angular world for 3 years... I hope it doesn't show. Guessing it will.
 
-Created with the latest version of NodeJs (LT 16.13.0 LTS)
 
-// Component Functions
-
-## Technologoies Used
-* Node.js 16.13.0 LTS
-* React 17.0.2
-* React Bootstrap 5.1.3
-* Axios 0.24.0
-
-## How to run
+## How to run the application
 1. Download the project from GitHub
 2. Open the project in Visual Studio Code
 3. Install all the Npm Packages locally
@@ -21,6 +12,13 @@ Created with the latest version of NodeJs (LT 16.13.0 LTS)
 3. Run the project in Visual Studio Code
     > npm start
 4. Navigate to http://localhost:3000/
+
+
+## Technologoies Used
+* Node.js 16.13.0 LTS
+* React 17.0.2
+* React Bootstrap 5.1.3
+* Axios 0.24.0
 
 
 
