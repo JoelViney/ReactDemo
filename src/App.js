@@ -20,9 +20,15 @@ function App() {
 	const handleSearch = (criteria) => {
 		console.log(`search: ${criteria}`);
 
+		if (process.env.REACT_APP_OMDBAPI_API_KEY == null) {
+			console.error('%cFailed to load the API Key from your environment variables.', 'color: red;');
+			return;
+		}
+
 		setLoading(true);
 		
-        let url = `${baseURL}?apikey=${process.env.OMDBAPI_API_KEY}&type=movie`;
+        let url = `${baseURL}?apikey=${process.env.REACT_APP_OMDBAPI_API_KEY}&type=movie`;
+
 		if (criteria === '') {
 			url = `${url}&s=star.wars`;
 		} else {
