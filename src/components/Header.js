@@ -19,12 +19,18 @@ const Header = ({ loading, onSearch }) => {
 		onSearch(criteria);
 	}
 
+	const handleHome = (e) => {
+		console.log(`handleHome: ${criteria}`);
+		setCriteria('');
+		onSearch('');
+	}
+
 
 	return (
 		<header>
-			<Navbar expand="md" bg="dark" variant="dark">
+			<Navbar expand="md" bg="dark" variant="dark" fixed="top">
 				<Container fluid>
-					<Navbar.Brand href="#" className="py-0">
+					<Navbar.Brand href="#" className="py-0" onClick={handleHome}>
 						{/* Borrowed logo for demo purposes :) */}
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 443 148" className="logo">
 							<title>logo_red</title>

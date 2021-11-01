@@ -4,10 +4,15 @@
     width: 80px;
 }
 
+/* Main wrapper for the body / movies container */
+.movie-container {
+    margin-top: 43px; /* This accounts for the fix navbar */ 
+}
+
 .movie-record {
 	display: inline-block;
     width: 300px;
-	border: 10px solid;
+    padding: 10px;
 	transition: 0.2s ease-out all;
 	position: relative;
 	overflow: hidden;
@@ -16,11 +21,22 @@
     margin-right: auto;
 }
 
-.movie-wrapper {
-    width: 100%;
+.movie-poster {
+    width: 300px;
     height: 100%;
     display: flex;
     justify-content: center;
+    /* background-color: black; */
+}
+
+.movie-text {
+    min-height: 450px;
+    width: 300px;
+    background-color: black;
+    padding-top: 200px;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
 }
 
 /* Category Hover */
