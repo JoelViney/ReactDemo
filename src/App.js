@@ -5,24 +5,24 @@ import Movies from './components/Movies';
 
 import axios from "axios";
 
-const baseURL = "http://www.omdbapi.com/?apikey=320f6ab2";
+const baseURL = "http://www.omdbapi.com/";
 
 function App() {
 	const [loading, setLoading] = useState(false)
     const [movies, setMovies] = useState([]);
 
 
-  // Similar to componentDidMount and componentDidUpdate:
-  useEffect(() => {
-	  // handleSearch('');    
-  });
+	// Similar to componentDidMount and componentDidUpdate:
+	useEffect(() => {
+		// handleSearch('');    
+	});
 
 	const handleSearch = (criteria) => {
 		console.log(`search: ${criteria}`);
 
 		setLoading(true);
 		
-        let url = `${baseURL}&type=movie`;
+        let url = `${baseURL}?apikey=${process.env.OMDBAPI_API_KEY}&type=movie`;
 		if (criteria === '') {
 			url = `${url}&s=star.wars`;
 		} else {
