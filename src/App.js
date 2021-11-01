@@ -12,10 +12,11 @@ function App() {
     const [movies, setMovies] = useState([]);
 
 
-  // Similar to componentDidMount and componentDidUpdate:
-  useEffect(() => {
-	  // handleSearch('');    
-  });
+	// Similar to componentDidMount and componentDidUpdate:
+	useEffect(() => {
+		console.log('loaded...')
+		// handleSearch('');    
+	});
 
 	const handleSearch = (criteria) => {
 		console.log(`search: ${criteria}`);

@@ -1,4 +1,5 @@
 
 * Multi-language support is not required.
 * Only interested in searching movies, requirements did say movie titles but more clarity from the user would be a good idea.
-* Did not use redux as KISS
+* Did not use redux as we are keeping it simple (KISS)
+* Usability will be optimised later for text-readers etc...
