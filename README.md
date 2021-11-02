@@ -42,3 +42,6 @@ Install [Axios](https://www.npmjs.com/package/axios)
 
     Note for typescript use:
     Typescript: const axios = require('axios').default;
+
+Install React Router
+    > npm install react-router-dom

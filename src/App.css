@@ -10,11 +10,11 @@
 }
 
 .movie-record {
+	position: relative;
 	display: inline-block;
     width: 300px;
     padding: 10px;
 	transition: 0.2s ease-out all;
-	position: relative;
 	overflow: hidden;
 	text-align: center;
     margin-left: auto;
@@ -26,7 +26,12 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    /* background-color: black; */
+    margin-bottom: -53px;
+}
+
+.movie-poster a {
+    color: white;
+    text-decoration: none;
 }
 
 .movie-text {
@@ -34,9 +39,26 @@
     width: 300px;
     background-color: black;
     padding-top: 200px;
-    color: white;
-    font-size: 22px;
+    font-size: 18px;
     text-decoration: none;
+    word-wrap: break-word;
+}
+
+.movie-hover-text {
+	position: relative;
+    top: -53px;
+    min-height: 53px;
+    font-size: 18px;
+    text-decoration: none;
+    word-wrap: break-word;
+    background-color: black;
+    opacity: 0;
+    color: white;
+    width: 100%;
+}
+
+.movie-hover-text:hover {
+    opacity: 0.5;    
 }
 
 /* Category Hover */
