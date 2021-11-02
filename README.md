@@ -1,17 +1,28 @@
 
 ## MyFlix
-
 I am a bit rusty as I have been in Angular world for 3 years... I hope it doesn't show. Guessing it will.
 
+This file has been written to help Junior developers setup the environment and understand the projects construction.
+
+## TODO
+    * npm vunrabilities
+    * fetch
+    * Tests
+
+## Setting up your Environment
+    I am using windows, there might be variations with other operating systems.
+    Steps:
+    1. Install Visual Studio Code from [here](https://code.visualstudio.com/)
+    2. Have a new version of node from [here](https://nodejs.org/en/)
 
 ## How to run the application
     1. Download the project from GitHub
     2. Open the project in Visual Studio Code at the 'ReactDemo' root directory 
-    3. Install all the NPM Packages locally in the terminal window by entering:
+    3. Install all the NPM Packages locally in the terminal window (Terminal > New) by entering:
         > npm install
     4. Add an file to the root src directory named '.env' and add the following line with your API key:
         REACT_APP_OMDBAPI_API_KEY = "your api key goes here"
-    5. Build the project:
+    5. Build the project (this is required to populate the env variables):
         > npm run-script build
     5. Run the project:
         > npm start
@@ -45,3 +56,8 @@ Install [Axios](https://www.npmjs.com/package/axios)
 
 Install React Router
     > npm install react-router-dom
+
+
+# Commands
+    View the version of node
+    > node -v
