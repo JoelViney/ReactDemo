@@ -4,6 +4,7 @@ This is an adventure into React hooks as I am a bit rusty as I have been stuck i
 
 A running version of it can be viewed [here](https://calm-desert-023948f10.azurestaticapps.net/)
 
+
 ## Technologoies Used
 * Node.js 16.13.0 LTS
 * React 17.0.2
@@ -12,10 +13,12 @@ A running version of it can be viewed [here](https://calm-desert-023948f10.azure
 
 * Azure (Linux Web App)
 
+
 ## Setting up your Environment (Windows)    
 Steps:
     1. Install Visual Studio Code from [here](https://code.visualstudio.com/)
     2. Have a new version of node from [here](https://nodejs.org/en/)
+
 
 ## How to run the application
     1. Download the project from GitHub
@@ -29,6 +32,11 @@ Steps:
     5. Run the project:
     > npm start
     6. Navigate to http://localhost:3000/
+
+
+## How to run the Tests
+    1. From the terminal window run the following command:
+    > npm test
 
 
 ## API Reference

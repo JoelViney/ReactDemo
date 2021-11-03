@@ -7,6 +7,6 @@
 
 * Did not use redux as we are keeping it simple (KISS).
 
-* Usability will be optimised later for text-readers etc.
+* Usability is semi optimised, would need to focus more on it.
 
 

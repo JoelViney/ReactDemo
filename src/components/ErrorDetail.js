@@ -6,9 +6,11 @@ const propTypes = {
 
 const ErrorDetail = ({ error }) => {
 	return (
-		<div>
-			{error && <div className="text-center text-white h4 pt-4">{error}</div>}
-		</div>
+		<>
+			{error && 
+				<div className="text-center text-white h4 pt-4" data-testid="error detail">{error}</div>
+			}
+		</>
 	);
 }
 

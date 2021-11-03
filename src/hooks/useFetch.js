@@ -9,7 +9,7 @@ const useFetch = (url) => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		const abortCont = new AbortController();
+		const aborter = new AbortController();
 
 		if (url == null) {
 			return;
@@ -23,7 +23,7 @@ const useFetch = (url) => {
 
 		setTimeout(() => {
 			const fullUrl = `${baseURL}?apikey=${process.env.REACT_APP_OMDBAPI_API_KEY}${url}`;
-			fetch(fullUrl, { signal: abortCont.signal })
+			fetch(fullUrl, { signal: aborter.signal })
 				.then(res => {
 					if (!res.ok) { // error coming back from server
 						throw Error('Failed to connect to the server.');
@@ -42,22 +42,21 @@ const useFetch = (url) => {
 						setError(null);
 					} else {
 						setError(data.Error);
-						setData([]);
+						setData(null);
 					}
 				})
 				.catch(err => {
 					if (err.name === 'AbortError') {
-						console.log('fetch aborted');
+						console.log('Fetch aborted...');
 					} else {
 						setLoading(false);
-						setData([]);
+						setData(null);
 						setError(err.message);
 					}
 				});
 		}, 1000);
 
-		// abort the fetch
-		return () => abortCont.abort();
+		return () => aborter.abort(); // abort the fetch
 	}, [url]);
 
 	return { data, loading, error };

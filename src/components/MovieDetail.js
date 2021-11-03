@@ -21,7 +21,7 @@ const MovieDetail = () => {
 			{error && <ErrorDetail error={error}></ErrorDetail>}
 			{loading && <LoadingDetail loading={true}></LoadingDetail>}
 			{movie &&
-				<div>
+				<div data-test-id="movie detail">
 					<div className="row">
 						<div className="col">
 							<div class="">

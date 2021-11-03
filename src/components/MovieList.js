@@ -38,7 +38,7 @@ const MovieList = ({ criteria }) => {
             { loading && <LoadingDetail loading={loading}></LoadingDetail> }			
             { movies &&
                 <>
-                    <div className="row">
+                    <div className="row" data-test-id="movie list">
 
                         {movies.map((movie) => (
                             <div key={movie.imdbID} className="movie-record col-12 col-sm-6 col-xl-4 col-xxl-3">
