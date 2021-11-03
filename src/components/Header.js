@@ -7,39 +7,39 @@ import { Button, Container, InputGroup, Nav, Navbar } from 'react-bootstrap';
 import { Form, FormControl } from "react-bootstrap";
 
 const propTypes = {
-	loading: PropTypes.bool.isRequired,
-	onSearch: PropTypes.func.isRequired,
+	onCriteria: PropTypes.func.isRequired,
 };
 
-const Header = ({ loading, onSearch }) => {
-	const [criteria, setCriteria] = useState('')
+// Contains the Navbar with a Home & Search bar
+const Header = ({ onCriteria }) => {
+	const [criteria, setCriteria] = useState('star wars'); // Lets start with something on the screen
 	const debouncedCriteria = useDebounce(criteria, 1000);
 
 	const handleHome = (e) => {
 		console.log(`handleHome: ${criteria}`);
 		setCriteria('');
-		onSearch('');
+		onCriteria('');
 	}
 
 	const handleSubmit = (e) => {
-		e.preventDefault();
 		console.log(`handleSubmit: ${criteria}`);
-		onSearch(criteria);
+		e.preventDefault();
+		onCriteria(criteria);
 	}
 
 	useEffect(() => {
 		if (debouncedCriteria) {
 			console.log(`debounce: ${debouncedCriteria}`);
-			onSearch(debouncedCriteria);
+			onCriteria(debouncedCriteria);
 		} 
-	}, [debouncedCriteria]); // Only call effect if debounced search term changes
+	}, [debouncedCriteria, onCriteria]); // Only call effect if debounced search term changes
 	
 
 	return (
 		<header>
 			<Navbar expand="md" bg="dark" variant="dark" fixed="top">
 				<Container fluid>
-					<Navbar.Brand href="" className="py-0 cursor-pointer" onClick={handleHome}>
+					<Navbar.Brand href="/" className="py-0 cursor-pointer" onClick={handleHome}>
 						{/* Borrowed logo for demo purposes :) */}
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 443 148" className="logo">
 							<title>logo_red</title>
@@ -69,7 +69,7 @@ const Header = ({ loading, onSearch }) => {
 									value={criteria}									
           							onChange={(e) => setCriteria(e.target.value)}
 								/>
-								<Button type="submit" variant="outline-secondary" id="button-search" className="bg-white" disabled={loading}>
+								<Button type="submit" variant="outline-secondary" id="button-search" className="bg-white">
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search pb-1" viewBox="0 0 16 16">
 										<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
 									</svg>
@@ -84,5 +84,4 @@ const Header = ({ loading, onSearch }) => {
 }
 
 Header.propTypes = propTypes;
-
 export default Header;

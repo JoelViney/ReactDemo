@@ -16,7 +16,7 @@ body {
 }
 
 /* Main wrapper for the body / movies container */
-.movie-container {
+.body {
     margin-top: 43px; /* This accounts for the fix navbar */ 
 }
 

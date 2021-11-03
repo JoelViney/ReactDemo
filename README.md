@@ -6,7 +6,7 @@ This file has been written to help Junior developers setup the environment and u
 
 ## TODO
     * npm vunrabilities
-    * fetch
+    * Loading not working
     * Tests
 
 ## Setting up your Environment
@@ -47,12 +47,6 @@ Create the Project
 
 Install [React Bootstrap] (https://react-bootstrap.github.io/)
     > npm install react-bootstrap bootstrap@5.1.3
-
-Install [Axios](https://www.npmjs.com/package/axios)
-    > npm install axios
-
-    Note for typescript use:
-    Typescript: const axios = require('axios').default;
 
 Install React Router
     > npm install react-router-dom
