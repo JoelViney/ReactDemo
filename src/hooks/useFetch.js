@@ -1,51 +1,59 @@
 import { useState, useEffect } from 'react';
 
+const baseURL = "http://www.omdbapi.com/";
+
 // Custom hook
 const useFetch = (url) => {
 	const [data, setData] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
-	function sleep(ms) {
-		return new Promise(resolve => setTimeout(resolve, ms));
-	}
-
 	useEffect(() => {
 		const abortCont = new AbortController();
 
+		if (url == null) {
+			return;
+		}
+
+		console.log(`Fetching data... ${url}`);
+
 		setLoading(true);
 		setError(null);
-		
-		sleep(500).then(() => {				
-			setTimeout(() => {
-				fetch(url, { signal: abortCont.signal })
-					.then(res => {
-						if (!res.ok) { // error coming back from server
-							throw Error('Failed to connect to the server.');
-						}
-						return res.json();
-					})
-					.then(data => {
-						setLoading(false);
-						if (data.Response === 'True') {
+		setData(null);
+
+		setTimeout(() => {
+			fetch(`${baseURL}${url}`, { signal: abortCont.signal })
+				.then(res => {
+					if (!res.ok) { // error coming back from server
+						throw Error('Failed to connect to the server.');
+					}
+					return res.json();
+				})
+				.then(data => {
+					setLoading(false);
+					console.log('data: ', data);
+					if (data.Response === 'True') {
+						if (data.Search) {
 							setData(data.Search);
-							setError(null);
 						} else {
-							setError(data.Error);
-							setData([]);
+							setData(data);
 						}
-					})
-					.catch(err => {
-						if (err.name === 'AbortError') {
-							console.log('fetch aborted');
-						} else {
-							setLoading(false);
-							setData([]);
-							setError(err.message);
-						}
-					});
-			}, 1000);
-		});
+						setError(null);
+					} else {
+						setError(data.Error);
+						setData([]);
+					}
+				})
+				.catch(err => {
+					if (err.name === 'AbortError') {
+						console.log('fetch aborted');
+					} else {
+						setLoading(false);
+						setData([]);
+						setError(err.message);
+					}
+				});
+		}, 1000);
 
 		// abort the fetch
 		return () => abortCont.abort();

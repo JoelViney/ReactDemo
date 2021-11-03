@@ -12,7 +12,7 @@ const propTypes = {
 
 // Contains the Navbar with a Home & Search bar
 const Header = ({ onCriteria }) => {
-	const [criteria, setCriteria] = useState('star wars'); // Lets start with something on the screen
+	const [criteria, setCriteria] = useState('star trek'); // Lets start with something on the screen
 	const debouncedCriteria = useDebounce(criteria, 1000);
 
 	const handleHome = (e) => {

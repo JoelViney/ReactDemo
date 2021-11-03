@@ -17,7 +17,7 @@ function App() {
 	return (
 		<Router>
 			<Header onCriteria={handleCriteria}></Header>
-			<div className="body">
+			<div className="main-container">
 				<Switch>
 					<Route exact path="/">
 						<MovieList criteria={criteria}></MovieList>

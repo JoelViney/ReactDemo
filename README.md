@@ -2,15 +2,12 @@
 ## MyFlix
 I am a bit rusty as I have been in Angular world for 3 years... I hope it doesn't show. Guessing it will.
 
-This file has been written to help Junior developers setup the environment and understand the projects construction.
-
 ## TODO
     * npm vunrabilities
     * Loading not working
     * Tests
 
-## Setting up your Environment
-    I am using windows, there might be variations with other operating systems.
+## Setting up your Environment (Windows)    
     Steps:
     1. Install Visual Studio Code from [here](https://code.visualstudio.com/)
     2. Have a new version of node from [here](https://nodejs.org/en/)
@@ -33,12 +30,11 @@ This file has been written to help Junior developers setup the environment and u
     * Node.js 16.13.0 LTS
     * React 17.0.2
     * React Bootstrap 5.1.3
-    * Axios 0.24.0
 
 
 ## API
     [OMDb API](https://www.omdbapi.com/)
- 
+
 
 ## Project Creation / Libraries
 

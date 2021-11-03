@@ -4,6 +4,7 @@ body {
 		"Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+    color: white !important;
 }
 
 .logo {
@@ -11,12 +12,17 @@ body {
     width: 80px;
 }
 
+.clean-link {
+    font-size: 18px;
+    color: white;
+}
+
 .cursor-pointer {
 	cursor: pointer;
 }
 
 /* Main wrapper for the body / movies container */
-.body {
+.main-container {
     margin-top: 43px; /* This accounts for the fix navbar */ 
 }
 
@@ -41,7 +47,6 @@ body {
 }
 
 .movie-poster a {
-    color: white;
     text-decoration: none;
 }
 
@@ -64,8 +69,8 @@ body {
     word-wrap: break-word;
     background-color: black;
     opacity: 0;
-    color: white;
     width: 100%;
+    color: white;
 }
 
 /* Category Hover */
@@ -75,8 +80,22 @@ body {
 	z-index: 100;
 }
 
-
-
 .movie-record:hover .movie-hover-text {
     opacity: 0.8;    
 }
+
+.movie-title {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.movie-table {
+    margin: 20px 0px;
+}
+
+.movie-plot {
+    font-size: 22px;
+    margin: 40px 40px;
+}
+

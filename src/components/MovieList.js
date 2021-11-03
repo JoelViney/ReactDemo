@@ -10,7 +10,6 @@ const propTypes = {
     criteria: PropTypes.string.isRequired,
 };
 
-const baseURL = "http://www.omdbapi.com/";
 
 const MovieList = ({ criteria }) => {	
     const [url, setUrl] = useState();
@@ -18,16 +17,20 @@ const MovieList = ({ criteria }) => {
 
 	useEffect(() => {
 		console.log(`search: ${criteria}`);
-		setUrl(`${baseURL}?apikey=${process.env.REACT_APP_OMDBAPI_API_KEY}&type=movie&s=${criteria}`);
+        if (criteria === "") {
+            return;
+        }
+		setUrl(`?apikey=${process.env.REACT_APP_OMDBAPI_API_KEY}&type=movie&s=${criteria}`);
 	}, [criteria]);
 
     return (
         <div className="container pt-3">
+
             { error && <ErrorDetail error={error}></ErrorDetail> }
-            { loading && <LoadingDetail loading={loading}></LoadingDetail> }
-			
+            { loading && <LoadingDetail loading={loading}></LoadingDetail> }			
             { movies && 
                 <div className="row">
+
                     {movies.map((movie) => (
                         <div key={movie.imdbID} className="movie-record col-12 col-sm-6 col-xl-4 col-xxl-3">
                             <div className="movie-poster">
