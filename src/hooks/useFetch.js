@@ -22,7 +22,8 @@ const useFetch = (url) => {
 		setData(null);
 
 		setTimeout(() => {
-			fetch(`${baseURL}${url}`, { signal: abortCont.signal })
+			const fullUrl = `${baseURL}?apikey=${process.env.REACT_APP_OMDBAPI_API_KEY}${url}`;
+			fetch(fullUrl, { signal: abortCont.signal })
 				.then(res => {
 					if (!res.ok) { // error coming back from server
 						throw Error('Failed to connect to the server.');

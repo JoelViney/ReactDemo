@@ -13,15 +13,15 @@ const MovieDetail = () => {
 
 	useEffect(() => {
 		console.log(`Loading Movie ID: ${id}`);
-		setUrl(`?apikey=${process.env.REACT_APP_OMDBAPI_API_KEY}&plot=full&i=${id}`);
+		setUrl(`&plot=full&i=${id}`);
 	}, [id]); // Only run on the first render
 
 	return (
-		<div>
+		<div className="container">
 			{error && <ErrorDetail error={error}></ErrorDetail>}
 			{loading && <LoadingDetail loading={true}></LoadingDetail>}
 			{movie &&
-				<div className="container pt-4">
+				<div>
 					<div className="row">
 						<div className="col">
 							<div class="">

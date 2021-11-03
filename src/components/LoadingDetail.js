@@ -8,9 +8,9 @@ const propTypes = {
 // Simple loading spinner.
 const LoadingDetail = ({ loading }) => {
 	return (
-		<div class="text-center">
+		<div className="text-center fs-1">
 			{loading &&
-				<Spinner animation="grow" variant="info">
+				<Spinner animation="border" variant="danger" role="Loading indicator">
 					<span className="visually-hidden">Loading...</span>
 				</Spinner>
 			}
