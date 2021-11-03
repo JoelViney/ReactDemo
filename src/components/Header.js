@@ -12,7 +12,7 @@ const propTypes = {
 
 // Contains the Navbar with a Home & Search bar
 const Header = ({ onCriteria }) => {
-	const [criteria, setCriteria] = useState('star trek'); // Lets start with something on the screen
+	const [criteria, setCriteria] = useState(''); // Lets start with something on the screen
 	const debouncedCriteria = useDebounce(criteria, 1000);
 
 	const handleHome = (e) => {
@@ -63,7 +63,7 @@ const Header = ({ onCriteria }) => {
 						<Form className="d-flex" onSubmit={handleSubmit}>
 							<InputGroup>
 								<FormControl style={{ width: '280px' }}
-									placeholder="search"
+									placeholder="search movies"
 									aria-label="search"
 									aria-describedby="search"
 									value={criteria}									

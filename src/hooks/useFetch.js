@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const baseURL = "http://www.omdbapi.com/";
+const baseURL = "https://www.omdbapi.com/";
 
 // Custom hook
 const useFetch = (url) => {
