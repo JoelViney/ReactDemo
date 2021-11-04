@@ -1,12 +1,11 @@
 
-* Multi-language support is not required.
+* We are only interested in searching movies.
 
-* Only interested in searching movies (requirements did say movie titles but more clarity from the user would be a good idea).
-
-* Storing API key on the client for simplicity.
+* Storing API key on the client for simplicity (at least its hidden from github in an .env variable).
 
 * Did not use redux as we are keeping it simple (KISS).
 
-* Usability is semi optimised, would need to focus more on it.
+* Usability has a token effort, it requires more work.
 
+* Multi-language support is not required.
 

@@ -22,7 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
- #api key
- .env
- .env.development
- .env.production
+#api key
+.env
+.env.development
+.env.production
