@@ -21,7 +21,7 @@ jobs:
       - name: Create env file
         run: |
           touch .env
-          echo REACT_APP_OMDBAPI_API_KEY="320f6ab2" >> .env
+          echo REACT_APP_OMDBAPI_API_KEY=320f6ab2 >> .env
           cat .env
       - name: Build And Deploy
         id: builddeploy
