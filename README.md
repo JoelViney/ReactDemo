@@ -2,7 +2,7 @@
 ## MyFlix
 This is an adventure into React hooks as I am a bit rusty as I have been stuck in the Angular world for a few years.
 
-A running version of it can be viewed [here](https://calm-desert-023948f10.azurestaticapps.net/)
+A running version of it can be viewed ----> [here](https://calm-desert-023948f10.azurestaticapps.net/)
 
 
 ## Technologoies Used
@@ -10,8 +10,11 @@ A running version of it can be viewed [here](https://calm-desert-023948f10.azure
 * React 17.0.2
 * React Router
 * React Bootstrap 5.1.3
+* [Jest](https://jestjs.io/docs/api) 
+* [React Testing Library](https://testing-library.com/docs/react-testing-library/)
 
 * Azure (Linux Web App)
+* Github Actions for CI
 
 
 ## Setting up your Environment (Windows)    
@@ -44,7 +47,7 @@ Steps:
 
 
 ## Project Creation / Libraries 
-    Create the Project
+    Create the Project using [create-react-app](https://create-react-app.dev/docs/)
     > npx create-react-app my-flix
 
     Install [React Bootstrap](https://react-bootstrap.github.io/)

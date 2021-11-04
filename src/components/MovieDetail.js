@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import useFetch from '../hooks/useFetch';
 
 import ErrorDetail from './ErrorDetail';
-import LoadingDetail from './LoadingDetail';
+import LoadingSpinner from './LoadingSpinner';
 
 const MovieDetail = () => {
 	const [url, setUrl] = useState();
@@ -17,11 +17,11 @@ const MovieDetail = () => {
 	}, [id]); // Only run on the first render
 
 	return (
-		<div className="container">
+		<div data-testid="movie-container" className="container">
 			{error && <ErrorDetail error={error}></ErrorDetail>}
-			{loading && <LoadingDetail loading={true}></LoadingDetail>}
+			{loading && <LoadingSpinner loading={true}></LoadingSpinner>}
 			{movie &&
-				<div data-test-id="movie detail">
+				<div data-testid="movie-detail">
 					<div className="row">
 						<div className="col">
 							<div class="">

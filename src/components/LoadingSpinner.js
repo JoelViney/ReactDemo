@@ -6,9 +6,9 @@ const propTypes = {
 };
 
 // Simple loading spinner.
-const LoadingDetail = ({ loading }) => {
+const LoadingSpinner = ({ loading }) => {
 	return (
-		<div className="text-center fs-1" data-testid="loading detail">
+		<div className="text-center fs-1" data-testid="loading-detail">
 			{loading &&
 				<Spinner data-testid="spinner" animation="border" variant="danger" role="Loading indicator">
 					<span className="visually-hidden">Loading...</span>
@@ -18,5 +18,5 @@ const LoadingDetail = ({ loading }) => {
 	);
 };
 
-LoadingDetail.propTypes = propTypes;
-export default LoadingDetail;
+LoadingSpinner.propTypes = propTypes;
+export default LoadingSpinner;

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import useFetch from '../hooks/useFetch';
+import { Button } from 'react-bootstrap';
 
 import ErrorDetail from './ErrorDetail';
-import LoadingDetail from './LoadingDetail';
-import { Button } from 'react-bootstrap';
+import LoadingSpinner from './LoadingSpinner';
 
 const propTypes = {
     criteria: PropTypes.string.isRequired,
@@ -32,13 +32,13 @@ const MovieList = ({ criteria }) => {
     };
 
     return (
-        <div className="container">
+        <div className="container" data-testid="movie-list-container">
 
             { error && <ErrorDetail error={error}></ErrorDetail> }
-            { loading && <LoadingDetail loading={loading}></LoadingDetail> }			
+            { loading && <LoadingSpinner loading={loading}></LoadingSpinner> }			
             { movies &&
                 <>
-                    <div className="row" data-test-id="movie list">
+                    <div className="row" data-testid="movie-list">
 
                         {movies.map((movie) => (
                             <div key={movie.imdbID} className="movie-record col-12 col-sm-6 col-xl-4 col-xxl-3">

@@ -8,7 +8,7 @@ const ErrorDetail = ({ error }) => {
 	return (
 		<>
 			{error && 
-				<div className="text-center text-white h4 pt-4" data-testid="error detail">{error}</div>
+				<div data-testid="error-detail" className="text-center text-white h4 pt-4">{error}</div>
 			}
 		</>
 	);
