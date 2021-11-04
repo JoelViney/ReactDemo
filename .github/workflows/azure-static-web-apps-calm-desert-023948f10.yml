@@ -18,11 +18,17 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - name: Remove .env File
+      # uses: JesseTG/rm@94440f309afcc4c37e6bf63eb0feca9e94dee5a3
+        uses: JesseTG/rm@v1.0.0
+        with:
+          path: .env
       - name: Create env file
         run: |
           touch .env
           echo REACT_APP_OMDBAPI_API_KEY="320f6ab2" >> .env
           cat .env
+      
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
