@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types'
 
+
 const propTypes = {
 	error: PropTypes.string,
 };
 
+
+// Displays an error on the page for the user to see.
 const ErrorDetail = ({ error }) => {
 	return (
 		<>
@@ -13,6 +16,5 @@ const ErrorDetail = ({ error }) => {
 		</>
 	);
 }
-
 ErrorDetail.propTypes = propTypes;
 export default ErrorDetail;

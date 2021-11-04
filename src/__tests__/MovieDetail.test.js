@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ReactRouter from 'react-router'
 
 import MovieDetail from '../components/MovieDetail';
@@ -15,6 +15,7 @@ test('movie page loads', () => {
 	const divElement = screen.queryByTestId('movie-container');
 	expect(divElement).toBeInTheDocument();
 });
+
 
 // TODO
 test('movie is loaded', () => {

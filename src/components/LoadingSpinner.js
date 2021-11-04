@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
+
 import { Spinner } from 'react-bootstrap';
+
 
 const propTypes = {
 	loading: PropTypes.bool.isRequired,
 };
 
-// Simple loading spinner.
+
+// Displays a sinple spinner when a component is loading
 const LoadingSpinner = ({ loading }) => {
 	return (
 		<div className="text-center fs-1" data-testid="loading-detail">
@@ -17,6 +20,5 @@ const LoadingSpinner = ({ loading }) => {
 		</div>
 	);
 };
-
 LoadingSpinner.propTypes = propTypes;
 export default LoadingSpinner;

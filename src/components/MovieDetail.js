@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Table } from 'react-bootstrap';
 import { Link, useParams } from "react-router-dom";
-import useFetch from '../hooks/useFetch';
 
+import { Table } from 'react-bootstrap';
+
+import useFetch from '../hooks/useFetch';
 import ErrorDetail from './ErrorDetail';
 import LoadingSpinner from './LoadingSpinner';
 
+
+// Displays a single movie's details
 const MovieDetail = () => {
 	const [url, setUrl] = useState();
 	const { error, loading, data: movie } = useFetch(url);
@@ -97,5 +100,4 @@ const MovieDetail = () => {
 		</div>
 	);
 };
-
 export default MovieDetail;

@@ -5,6 +5,7 @@ import Header from './components/Header';
 import MovieList from './components/MovieList';
 import MovieDetail from './components/MovieDetail';
 
+
 // Root component 
 function App() {
     const [criteria, setCriteria] = useState('star trek');
@@ -42,5 +43,4 @@ function App() {
 		</Router>
 	);
 }
-
 export default App;

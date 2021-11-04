@@ -73,7 +73,6 @@ body {
     color: white;
 }
 
-/* Category Hover */
 .movie-record:hover {
 	transform: scale(1.05);
 	position: relative;

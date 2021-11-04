@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 
+
 const baseURL = "https://www.omdbapi.com/";
 
-// Custom hook
+
+// Calls the omdb api and returns the data
 const useFetch = (url) => {
 	const [data, setData] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -61,5 +63,4 @@ const useFetch = (url) => {
 
 	return { data, loading, error };
 };
-
 export default useFetch;

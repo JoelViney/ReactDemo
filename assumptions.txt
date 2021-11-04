@@ -1,11 +1,12 @@
 
 * We are only interested in searching movies.
 
-* Storing API key on the client for simplicity (at least its hidden from github in an .env variable).
+* Storing API key on the client for simplicity. It is at least its hidden from github in an .env variable.
 
 * Did not use redux as we are keeping it simple (KISS).
 
-* Usability has a token effort, it requires more work.
+* Usability (text readers etc) has a token effort, it requires more work.
 
 * Multi-language support is not required.
 
+* I don't need to pay attention to outdated browsers.

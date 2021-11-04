@@ -12,6 +12,7 @@ test('movie list loads page', () => {
 	expect(divElement).toBeInTheDocument();
 });
 
+
 // TODO
 test('movies load', () => {
 	// Arrange

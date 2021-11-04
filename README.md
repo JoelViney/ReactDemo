@@ -1,6 +1,7 @@
 
 ## My-Flix
 This is an adventure into React hooks as I have been stuck in the Angular world for a few years.
+There are a couple of quirks in the UI, with time I will resolve these.
 
 A running version of it can be viewed ----> [here](https://calm-desert-023948f10.azurestaticapps.net/)
 
@@ -27,19 +28,19 @@ Steps:
     1. Download the project from GitHub
     2. Open the project in Visual Studio Code at the 'ReactDemo' root directory 
     3. Install all the NPM Packages locally in the terminal window (Terminal > New) by entering:
-       > npm install
+      > npm install
     4. Add an file to the root src directory named '.env' and add the following line with your API key:
     REACT_APP_OMDBAPI_API_KEY = "your api key goes here"
     5. Build the project (this is required to populate the env variables):
-       > npm run-script build
+      > npm run-script build
     5. Run the project:
-    > npm start
+      > npm start
     6. Navigate to http://localhost:3000/
 
 
 ## How to run the Tests
     1. From the terminal window run the following command:
-       > npm test
+      > npm test
 
 
 ## API Reference

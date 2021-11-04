@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-import useFetch from '../hooks/useFetch';
+
 import { Button } from 'react-bootstrap';
 
+import useFetch from '../hooks/useFetch';
 import ErrorDetail from './ErrorDetail';
 import LoadingSpinner from './LoadingSpinner';
+
 
 const propTypes = {
     criteria: PropTypes.string.isRequired,
 };
 
 
+// Displays a list of movies
 const MovieList = ({ criteria }) => {
     const [page, setPage] = useState(1);
     const [url, setUrl] = useState();
@@ -78,6 +81,5 @@ const MovieList = ({ criteria }) => {
         </div>
     );
 };
-
 MovieList.propTypes = propTypes;
 export default MovieList;

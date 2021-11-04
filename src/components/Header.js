@@ -1,16 +1,18 @@
 
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import useDebounce from '../hooks/useDebounce';
 
 import { Button, Container, InputGroup, Nav, Navbar } from 'react-bootstrap';
 import { Form, FormControl } from "react-bootstrap";
+import useDebounce from '../hooks/useDebounce';
+
 
 const propTypes = {
 	onCriteria: PropTypes.func.isRequired,
 };
 
-// Contains the Navbar with a Home & Search bar
+
+// Contains the navbar with a home & Search input
 const Header = ({ onCriteria }) => {
 	const [criteria, setCriteria] = useState(''); // Lets start with something on the screen
 	const debouncedCriteria = useDebounce(criteria, 1000);
@@ -82,6 +84,5 @@ const Header = ({ onCriteria }) => {
 		</header>
 	);
 }
-
 Header.propTypes = propTypes;
 export default Header;
