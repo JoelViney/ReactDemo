@@ -7,6 +7,7 @@ const baseURL = "https://www.omdbapi.com/";
 // Calls the omdb api and returns the data
 const useFetch = (url) => {
 	const [data, setData] = useState(null);
+	const [recordCount, setRecordCount] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
@@ -37,8 +38,10 @@ const useFetch = (url) => {
 					console.log('data: ', data);
 					if (data.Response === 'True') {
 						if (data.Search) {
+							setRecordCount(+data.totalResults);
 							setData(data.Search);
 						} else {
+							setRecordCount(1);
 							setData(data);
 						}
 						setError(null);
@@ -61,6 +64,6 @@ const useFetch = (url) => {
 		return () => aborter.abort(); // abort the fetch
 	}, [url]);
 
-	return { data, loading, error };
+	return { data, recordCount, loading, error };
 };
 export default useFetch;

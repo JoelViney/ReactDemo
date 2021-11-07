@@ -27,9 +27,7 @@ const MovieDetail = () => {
 				<div data-testid="movie-detail">
 					<div className="row">
 						<div className="col">
-							<div class="">
-								<h1 className="movie-title">{movie.Title}</h1>
-							</div>
+							<h1 className="movie-title">{movie.Title}</h1>
 						</div>
 					</div>
 

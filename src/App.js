@@ -8,7 +8,7 @@ import MovieDetail from './components/MovieDetail';
 
 // Root component 
 function App() {
-    const [criteria, setCriteria] = useState('star trek');
+    const [criteria, setCriteria] = useState(null);
 
 	const handleCriteria = (criteria) => {
 		console.log(`handleCriteria: ${criteria}`);

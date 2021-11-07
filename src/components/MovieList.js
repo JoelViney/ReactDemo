@@ -2,37 +2,42 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-import { Button } from 'react-bootstrap';
+import { Pagination } from 'react-bootstrap';
 
 import useFetch from '../hooks/useFetch';
+import usePagination from '../hooks/usePagination';
 import ErrorDetail from './ErrorDetail';
 import LoadingSpinner from './LoadingSpinner';
 
 
 const propTypes = {
-    criteria: PropTypes.string.isRequired,
+    criteria: PropTypes.string,
 };
 
 
 // Displays a list of movies
 const MovieList = ({ criteria }) => {
-    const [page, setPage] = useState(1);
-    const [url, setUrl] = useState();
-	const { error, loading, data: movies } = useFetch(url);
+    const [ page, setPage ] = useState(1);
+    const [ url, setUrl ] = useState();
+    const { data: movies, recordCount, loading, error } = useFetch(url);
+    const { totalPages, pages } = usePagination(page, recordCount, 10);
 
 	useEffect(() => {
-		console.log(`search: ${criteria}`);
-        if (criteria === "") {
+		console.log(`search: ${page} ${criteria}`);
+        if (criteria == null) {
             return;
         }
-        setPage(1);
-		setUrl(`&type=movie&s=${criteria}`);
-	}, [criteria]);
+        setUrl(`&type=movie&page=${page}&s=${criteria}`);
+	}, [criteria, page]);
 
-    const handleNextPage = () => {
-        setPage(page + 1);
-        setUrl(`&type=movie&s=${criteria}&page=${page + 1}`);
-    };
+	const handlePageClick = (newPage) => {
+		console.log(`handlePageClick: ${newPage} ${criteria}`);
+        if (page === newPage) {
+            return;
+        }
+
+        setPage(newPage);
+    }
 
     return (
         <div className="container" data-testid="movie-list-container">
@@ -69,10 +74,18 @@ const MovieList = ({ criteria }) => {
 
                     <div className="row">
                         <div className="col">
-                            <div className="d-grid gap-2 p-4">
-                                <Button variant="outline-danger" size="lg" onClick={handleNextPage}>
-                                    Next Page
-                                </Button>
+                            <div className="d-flex gap-2 p-4 text-center justify-content-center">
+                                <Pagination size="lg">
+                                    <Pagination.First key="-2" disabled={page === 1} onClick={() => handlePageClick(1)} />
+                                    <Pagination.Prev key="-1" disabled={page === 1} onClick={() => handlePageClick(page - 1)} />
+
+                                    {pages.map((x, i) => {
+                                        return <Pagination.Item key={i} active={x === page} onClick={() => handlePageClick(x)}>{x}</Pagination.Item>
+                                    })}
+
+                                    <Pagination.Next key="-3" disabled={page === totalPages} onClick={() => handlePageClick(page + 1)} />
+                                    <Pagination.Last key="-4" disabled={page === totalPages} onClick={() => handlePageClick(totalPages)} />
+                                </Pagination>
                             </div>
                         </div>
                     </div>
